@@ -92,3 +92,56 @@ print(math.lcm(a,b))
 a,b=map(int,input().split());L=a*b
 while b:a,b=b,a%b
 print(a,L//a)
+
+##쩡님
+n, m = map(int, input().split())
+n_fips = [i for i in range(1, n + 1) if n % i == 0]  # factorization in prime factors(소인수 분해)
+m_fips = [j for j in range(1, m + 1) if m % j == 0]
+nm_gcd_lst = []  # 공약수 리스트
+# print(n_fips)
+# print(m_fips)
+
+for i in range(len(n_fips)):
+    if n_fips[i] in m_fips:
+        nm_gcd_lst.append(n_fips[i])
+nm_gcd = nm_gcd_lst[len(nm_gcd_lst) - 1]
+print(nm_gcd)  # 최대 공약수
+
+n_rem = n // nm_gcd
+m_rem = m // nm_gcd
+nm_lcm = nm_gcd * n_rem * m_rem
+print(nm_lcm)  # 최소 공배수
+
+#혠님
+
+## 방법 1
+
+# 두 개의 자연수를 입력 받음 (10000이하의 자연수)
+while True:
+    a, b = map(int, input().split(' '))
+    if 1 <= a <= 10000 and 1 <= b <= 10000:
+        break
+
+# 둘 중 큰 수가 max_num, 작은 수가 min_num
+max_num, min_num = 0, 0
+
+if a < b:
+    min_num = a
+    max_num = b
+else:
+    min_num = b
+    max_num = a
+
+## 최대공약수 구하기
+# 최대공약수는 둘 중 작은 수보다는 무조건 작으니까 min_num부터 시작
+for i in range(min_num, 0, -1):
+    if a % i == 0 and b % i == 0:
+        print(i)
+        break
+
+## 최소공배수 구하기
+# max_num부터 두 수를 곱한 수까지 반복 / 최소공배수는 max_num보다는 무조건 큼
+for i in range(max_num, a * b + 1):
+    if i % a == 0 and i % b == 0:
+        print(i)
+        break
