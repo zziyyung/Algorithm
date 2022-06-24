@@ -8,10 +8,10 @@
 # 올바른 괄호열 : () []
 
 # 첫째 줄 : 괄호열을 나타내는 문자열 ( 1이상 30 이하)
-import sys
-Input = sys.stdin.readline()
-if len(Input) < 1 or len(Input) >31:
-    print ('다시 입력')
+# import sys
+# Input = sys.stdin.readline()
+# if len(Input) < 1 or len(Input) >31:
+#     print ('다시 입력')
 
 
 # 1. 올바른 괄호열과 올바르지 않은 괄호열 구분
@@ -27,18 +27,18 @@ if len(Input) < 1 or len(Input) >31:
 
 
 # 시작 문자 리스트 와 끝 문자 리스트를 따로 만들어서 그 안에서 확인 !
-start = [ '(' , '[' ]
-end = [ ')' , ']' ]
-start_lo = Input[0]
-last_lo = Input[-1]
+# start = [ '(' , '[' ]
+# end = [ ')' , ']' ]
+# start_lo = Input[0]
+# last_lo = Input[-1]
 
-if (Input.find(')') == 0) or (Input.find(']') == 0) or \
-    (Input.find('(') == -1) or (Input.find('[') == -1) or \
-    (Input.find('(') > Input.find(')')) or (Input.find('[') > Input.find(']')) or \
-    (Input.count('(') != Input.count(')')) or (Input.count('[') != Input.count(']')) :
-    print('0')
-else:
-    print('일단 오케이')
+# if (Input.find(')') == 0) or (Input.find(']') == 0) or \
+#     (Input.find('(') == -1) or (Input.find('[') == -1) or \
+#     (Input.find('(') > Input.find(')')) or (Input.find('[') > Input.find(']')) or \
+#     (Input.count('(') != Input.count(')')) or (Input.count('[') != Input.count(']')) :
+#     print('0')
+# else:
+#     print('일단 오케이')
 
 
 
@@ -50,3 +50,43 @@ def f(x):
 
 # 3. 올바른 괄호열 연산법 설정 ( 올바르지 않은 괄호열은 0 )
 
+
+
+# 참고
+s = input()
+stack = []
+tmp = 1
+res = 0
+
+# for c in s를 하면 안 되고 길이로 돌아야 함
+for i in range(len(s)):
+    if s[i] == '(':
+        tmp *= 2
+        stack.append(s[i])
+    elif s[i] == '[':
+        tmp *= 3
+        stack.append(s[i])
+
+    elif s[i] == ')':
+        if not stack or stack[-1] == '[':
+            res = 0
+            break
+        if s[i - 1] == '(':
+            res += tmp
+        tmp //= 2
+        stack.pop()  # pop도 까먹지 말고 꼭
+
+    else:
+        if not stack or stack[-1] == '(':
+            res = 0
+            break
+        # [()]의 경우 ] 직전 문자가 )이므로 더하지 않고 넘어감
+        # 단, 이 경우는 오류는 아님
+        if s[i - 1] == '[':
+            res += tmp
+        tmp //= 3
+        stack.pop()  # pop 까먹지 말기
+
+if stack:
+    res = 0
+print(res)

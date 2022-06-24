@@ -21,7 +21,7 @@ else:
 
 
 #함수 선언부
-선택정렬 함수
+#선택정렬 함수
 def selectionSort(ary):
     n=len(ary)
     for i in range(0,n-1):
