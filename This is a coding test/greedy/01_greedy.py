@@ -10,7 +10,7 @@ coin_types = [500,100,50,10]
 for coin in coin_types:
     count += n // coin
     # 1. 0 + 1260//500 = 2  , count=2
-    # 2. 2 + 262//100 = 4  , count=4
+    # 2. 2 + 260//100 = 4  , count=4
     # 3. 4 + 60//50 =5 ,count =5
     # 4. 5 + 10//10 = 6 , count =6
     n %= coin
