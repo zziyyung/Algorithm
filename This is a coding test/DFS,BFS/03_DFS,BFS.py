@@ -1,7 +1,7 @@
 # 음료수 얼려먹기 (DFS)
 
 n, m = map(int,input().split())
-graph = [ list(map(int,input().split())) for _ in range(n)]
+graph = [ list(map(int,input())) for _ in range(n)]
 
 def dfs(x,y):
     # 주어진 범위를 벗어나는 경우 즉시 종료
