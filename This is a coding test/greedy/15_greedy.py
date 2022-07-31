@@ -7,7 +7,7 @@ n = int(input())
 a = list(map(int,input().split()))
 b = list(map(int,input().split()))
 
-# 2. a
+# 2. a 정렬 후 , answer 값 도출
 answer = 0
 a.sort()
 
