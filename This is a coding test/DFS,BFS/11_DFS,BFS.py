@@ -37,7 +37,7 @@ def process(x, y, index) :
 		# 바로 옆에 있는 나라를 확인하여
 		if 0 <= nx < n and 0 <= ny < n and union[nx][ny] == -1 :
 			# 옆에 있는 나라와 인구 차이가 L명 이상, R명 이하라면
-			if l <= abs(graph[nx)[ny] - graph[x][y]) <= r :
+			if l <= abs(graph[nx][ny] - graph[x][y]) <= r :
 				q.append((nx, ny))
 				# 연합에 추가
 				union[nx][ny] = index
