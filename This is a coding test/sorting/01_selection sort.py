@@ -7,3 +7,9 @@ for i in range(len(array)):
             min_index = j
     array[i],array[min_index] = array[min_index],array[i] #스와프
 print(array)
+
+
+# 파이썬 스와프
+array = [3,5]
+array[0],array[1] = array[1],array[0]
+print(array)
