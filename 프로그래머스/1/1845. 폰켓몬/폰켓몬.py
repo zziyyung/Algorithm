@@ -5,3 +5,6 @@ def solution(nums):
     else:
         answer = unique_mon
     return answer
+
+# 다른 사람 풀이 
+# min() 함수로 대소비교 
