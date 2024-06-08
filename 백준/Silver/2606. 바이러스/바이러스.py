@@ -10,6 +10,7 @@ graph = [[] for _ in range(n+1)]
 for i in range(m):
     index, val = map(int,input().split())
     graph[index].append(val)
+    # key point : 언제나 1부터 등장한다는 보장이 없기 때문
     graph[val].append(index)
 
 # 방문 체크
