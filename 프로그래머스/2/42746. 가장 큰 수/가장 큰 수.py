@@ -1,3 +1,13 @@
+# 풀이1 : 시간초과
+# from itertools import permutations
+# def solution(numbers):
+#     str_numbers = list(map(str,numbers))
+#     perms = permutations(str_numbers)
+#     largets = max(''.join(perm) for perm in perms)
+#     return 0 if largets[0] == '0' else largets
+
+
+# 풀이2 : sort&loop
 def solution(numbers):
     answer = ''
 
