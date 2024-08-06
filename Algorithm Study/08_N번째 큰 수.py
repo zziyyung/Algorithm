@@ -20,7 +20,7 @@ for _ in range(T):
 # t = int(input())
 # for _ in range(t):
 #     a = list(map(int, input().split()))
-#     a.sort()
+#     a.정렬()
 #     print(a[-3])
 
 n = int(input())
@@ -39,7 +39,7 @@ for i in range(n):
 #         if len(a[i]) != 10:
 #             raise Exception('10개의 배열을 입력해 주세요')
 #         else:
-#             a[i].sort()
+#             a[i].정렬()
 #             print(a[i][-3])
 # except Exception as e:
 #     print
@@ -56,7 +56,7 @@ for _ in range(T):
         print(A[N-1])
 
 # 파이썬 for문에서 변수 값이 필요 없을 때에는 _(언더바)를 사용
-# Q. sort 안 쓰고 어떻게 만들지
+# Q. 정렬 안 쓰고 어떻게 만들지
 
 
 tmp = 0

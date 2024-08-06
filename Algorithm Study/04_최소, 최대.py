@@ -111,5 +111,5 @@ print(f'{Input[0]} {Input[-1]}')
 # new_list=list(map(int,num.split()))
 #
 # # 리스트 정렬 후 최솟값과 최댓값 출력
-# new_list.sort()
+# new_list.정렬()
 # print(f'{new_list[0]} {new_list[len(new_list)-1]}')

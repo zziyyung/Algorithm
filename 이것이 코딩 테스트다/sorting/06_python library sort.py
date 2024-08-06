@@ -5,7 +5,7 @@ array = [7,5,9,0,3,1,6,2,4,8]
 result = sorted(array)
 print(result)
 
-# sort : 별도의 정렬된 리스트가 반환되지 않고 원소 바로 정렬
+# 정렬 : 별도의 정렬된 리스트가 반환되지 않고 원소 바로 정렬
 array = [7,5,9,0,3,1,6,2,4,8]
 array.sort()
 print(array)

@@ -61,7 +61,7 @@ print('\n'.join(map(str,List)))
 #     num.remove(b)
 #
 #     # 순서대로 정렬 후 출력
-#     num.sort()  # 변수로 저장하지 않고 sort()로 정렬만!
+#     num.정렬()  # 변수로 저장하지 않고 정렬()로 정렬만!
 #
 #     # 출력
 #     for i in range(7):
