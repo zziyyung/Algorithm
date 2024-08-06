@@ -1,4 +1,4 @@
 def solution(s):
-    if (len(s) == 4 or len(s) == 6) and s.isnumeric():
+    if (len(s) in(4,6)) and s.isnumeric():
             return True
     return False
